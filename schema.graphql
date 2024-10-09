@@ -1,0 +1,19 @@
+type Movie {
+  id: ID!
+  title: String!
+  genre: String!
+  director: String!
+  releaseDate: String
+  rating: Float
+}
+
+type Query {
+  movie(id: ID!): Movie
+  movies(genre: String, search: String): [Movie]
+}
+
+type Mutation {
+  addMovie(title: String!, genre: String!, director: String!, releaseDate: String, rating: Float): Movie
+  updateMovie(id: ID!, title: String, genre: String, director: String, releaseDate: String, rating: Float): Movie
+  deleteMovie(id: ID!): Movie
+}
